@@ -1,0 +1,813 @@
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    background: #fff;
+    color: #333;
+}
+
+/* ========== HEADER ========== */
+.site-header {
+    background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.logo-wrap {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    display: block;
+}
+
+.logo-img {
+    height: auto;
+    width: 200px;
+    display: block;
+    object-fit: contain;
+}
+
+.header-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 14px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.btn-blog {
+    --accent: #47594E;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: transform 0.18s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-blog:hover {
+    animation: header-pulse 1s infinite;
+    background-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.16);
+}
+
+.btn-contact {
+    --accent: #47594E;
+    background: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: transform 0.18s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-contact:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(71, 89, 78, 0.08);
+}
+
+.btn-contact:hover {
+    animation: header-pulse 1s infinite;
+    background-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 12px 30px rgba(255, 255, 255, 0.16);
+}
+
+@keyframes header-pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.04);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ========== ONDAS ========== */
+:root {
+    --wave-color: #47594E;
+    --below-color: #ffffff;
+}
+
+.wave-top,
+.wave-bottom {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-top svg,
+.wave-bottom svg {
+    display: block;
+    width: 100%;
+    height: 110px;
+}
+
+.wave-top svg path {
+    fill: var(--wave-color);
+}
+
+.wave-bottom {
+    transform: translateY(-2px);
+}
+
+.wave-bottom svg {
+    transform: rotate(180deg);
+    transform-origin: center;
+}
+
+.wave-bottom svg path {
+    fill: var(--wave-color);
+    stroke: var(--wave-color);
+    stroke-width: 2;
+}
+
+/* ========== INÍCIO =================== */
+.inicio {
+    display: flex;
+    justify-content: center; /* centraliza horizontalmente */
+    align-items: center;     /* centraliza verticalmente */
+    background: #47594E;
+    color: #fff;
+    padding: 0;              /* remove padding para ocupar a tela inteira */
+    height: 100vh;           /* 100% da altura da tela */
+    box-sizing: border-box;  /* garante que padding/bordas não aumentem o tamanho */
+}
+
+
+.inicio-grid {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.inicio-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.espelho {
+    height: 550px;
+    display: flex;
+    width: 450px;
+    flex-direction: column;
+    margin-left: 150px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.inicio-left .espelho {
+    text-align: center;
+    /* Alinha todo o conteúdo ao centro */
+    padding: 20px;
+    /* Espaçamento interno opcional */
+    gap: 5px;
+}
+
+/* Se quiser ajustar o espaçamento entre h1, h2 e p */
+.inicio-left .espelho h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.inicio-left .espelho h2 {
+    color: #BDD84B;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.inicio-left .espelho p {
+
+    font-size: 20px;
+    line-height: 1.6;
+    /* Facilita a leitura do parágrafo */
+}
+
+
+.inicio-right {
+    margin-top: 100px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    align-items: center;
+}
+
+.video-wrapper video {
+    display: flex;
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+/* Carrossel automático de imagens */
+.carousel-auto {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-auto .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-auto .slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-auto img {
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    display: block;
+}
+
+/* ========== SERVIÇOS ========== */
+.servicos {
+    padding: 60px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+.servicos-carousel-wrapper {
+    position: relative;
+    overflow: visible;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+.servicos-carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.servicos-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.35s ease;
+    flex-wrap: nowrap;
+}
+
+.servico-card {
+    flex: 0 0 260px;
+    width: auto;
+    height: 450px;
+    box-sizing: border-box;
+    background: rgba(224, 235, 146, 0.596);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.servico-card img {
+    width: 280px;
+    height: 250px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.servico-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    height: 50px;
+}
+
+.servico-card .btn {
+    display: inline-block;
+    background: #86ad95;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.servico-card .btn:hover {
+    display: inline-block;
+    background: #fff;
+    color: #2a332d;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.servicos-prev,
+.servicos-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #47594E;
+    color: #000000;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicos-prev {
+    left: 10px;
+}
+
+.servicos-next {
+    right: 10px;
+}
+
+.servicos-prev:hover,
+.servicos-next:hover {
+    background: #2f3d35;
+}
+
+/* ========== LOGOS CAROUSEL / MARQUEES ========== */
+.marquee {
+    margin-top: 30px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.marquee-track img {
+    display: flex;
+    height: 40px;
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.titulo1 {
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    color: #47594E;
+
+
+}
+
+/* ========== FOOTER ========== */
+.site-footer {
+    background: #012e10;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 40px 10%;
+}
+
+/* Topo do footer: 3 colunas */
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* Coluna 1: Logo principal */
+.footer-logo img {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 280px;
+    height: auto;
+}
+
+/* Coluna 2: Logos com texto */
+.footer-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.footer-logos .logo-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-logos .logo-item:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.footer-logos .logo-item img {
+    width: 50px;
+    height: auto;
+}
+
+.footer-logos .logo-item span {
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* Coluna 3: Contatos e mini mapa */
+.footer-contacts {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.footer-contacts p {
+    margin: 6px 0;
+}
+
+.footer-contacts .mini-map iframe {
+    width: 100%;
+    height: 80px;
+    border: 0;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+/* Linha branca */
+.footer-line {
+    height: 2px;
+    background-color: #fff;
+    margin: 20px 0;
+    width: 100%;
+}
+
+/* Rodapé inferior: direitos autorais e redes sociais */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Link copyright */
+.footer-bottom .copyright-link {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.footer-bottom .copyright-link:hover {
+    opacity: 0.7;
+}
+
+/* ===================== */
+/* RESPONSIVIDADE (tablet + mobile) */
+/* Cole no final do styles.css */
+/* ===================== */
+
+/* ---------- Breakpoints ---------- */
+/* Tablet landscape / small desktop */
+@media (max-width: 1024px) {
+
+  .header-inner {
+    padding: 12px 16px;
+    gap: 10px;
+    align-items: center;
+    max-width: 1000px;
+  }
+
+  .logo-img {
+    width: 160px; /* reduz logo */
+  }
+
+  .header-center {
+    /* mantém botão Blog visível e reduz tamanho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .btn-blog, .btn-contact {
+    padding: 8px 14px;
+    font-size: 0.95rem;
+  }
+
+  .inicio {
+    height: auto; /* permite rolagem se necessário */
+    padding: 40px 18px;
+  }
+
+  .inicio-grid {
+    gap: 18px;
+    max-width: 1000px;
+    padding: 0 8px;
+  }
+
+  .espelho {
+    width: 400px;
+    height: auto;
+    margin-left: 60px;
+    padding: 26px;
+  }
+
+  .inicio-right {
+    margin-top: 40px;
+  }
+
+  .video-wrapper video {
+    width: 240px;
+    height: 320px;
+  }
+
+  .footer-top {
+    gap: 14px;
+  }
+
+  .footer-contacts .mini-map iframe {
+    height: 60px;
+  }
+}
+
+/* Tablet portrait and large phones */
+@media (max-width: 768px) {
+
+  .header-inner {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+  }
+
+  .logo-img {
+    width: 150px;
+    margin-bottom: 6px;
+  }
+  .header-inner {
+    flex-direction: row;
+  }
+
+  .header-center {
+    order: 2;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin: 0 8px;
+  }
+
+  .header-actions {
+    order: 3;
+    align-items: flex-end;
+  }
+
+  .btn-blog, .btn-contact {
+    padding: 8px 12px;
+    font-size: 0.92rem;
+  }
+
+  /* INÍCIO: empilha colunas */
+  .inicio-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inicio-left, .inicio-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .espelho {
+    margin-left: 0;
+    width: calc(100% - 60px);
+    max-width: 420px;
+    padding: 20px;
+    height: auto;
+  }
+
+  .inicio-left .espelho h1 {
+    font-size: 26px;
+  }
+
+  .inicio-left .espelho p {
+    font-size: 18px;
+  }
+
+  .video-wrapper video {
+    width: 200px;
+    height: auto;
+    max-height: 280px;
+  }
+
+
+
+
+
+/* ========== CARROSSEL: 1 CARD POR VEZ (override / final) ========== */
+
+/* Garante que o wrapper fique centralizado e com largura controlada */
+.servicos-carousel-wrapper {
+  max-width: 100%; /* ajuste conforme desejar */
+  padding: 0 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* O container visível de rolagem */
+.servicos-carousel {
+  overflow: hidden; /* esconde cortes */
+  width: 100%;
+}
+
+/* Track usa transform para movimentar cards */
+.servicos-track {
+  display: flex;
+  gap: 20px;                  /* espaçamento entre cards (JS considera esse gap) */
+  transition: transform 0.45s cubic-bezier(.22,.9,.36,1);
+  will-change: transform;
+  align-items: stretch;
+  /* evita wrap */
+  flex-wrap: nowrap;
+}
+
+/* cada card ocupa 100% do espaço visível do carousel (1 por vez) */
+.servico-card {
+  box-sizing: border-box;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+
+
+/* setas: deixei estilo semelhante, mas com sombra e maior click area */
+.servicos-prev,
+.servicos-next {
+  background: #47594E;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.25rem;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: 0 6px 18px rgba(39,48,41,0.18);
+}
+
+/* posicionamento lateral com mais margem */
+.servicos-prev { left: 8px; }
+.servicos-next { right: 8px; }
+
+
+
+
+
+
+
+
+
+  
+
+  /* Footer empilha colunas */
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .footer-contacts {
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-contacts .mini-map iframe {
+    height: 120px;
+  }
+
+  .footer-bottom {
+    padding-top: 10px;
+  }
+}
+
+/* Pequenos celulares (até ~420px) */
+@media (max-width: 420px) {
+
+  .logo-img {
+    width: 130px;
+  }
+
+  .btn-blog, .btn-contact {
+    padding: 6px 10px;
+    font-size: 0.88rem;
+  }
+
+  .espelho {
+    width: calc(100% - 40px);
+    padding: 16px;
+  }
+
+  .inicio-left .espelho h1 {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  .inicio-left .espelho h2 {
+    font-size: 18px;
+  }
+
+  .inicio-left .espelho p {
+    font-size: 16px;
+  }
+
+  .video-wrapper video {
+    width: 180px;
+    height: auto;
+  }
+
+  .marquee-track img {
+    height: 28px;
+  }
+
+  .footer-contacts .mini-map iframe {
+    height: 100px;
+  }
+
+}
+
+/* Acessibilidade: foco visível em botões maiores no mobile */
+@media (max-width: 768px) {
+  .btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(71, 89, 78, 0.12);
+  }
+}
+
+}
